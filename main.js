@@ -32,9 +32,21 @@ app.get('/login', function(req, res) {
     res.render('login_page')
 })
 
+app.get('/login_success', function(req, res) {
+    res.render('login_success')
+})
+
 // 회원가입
 app.get('/signup', function(req, res) {
     res.render('signup_page')
+})
+
+app.get('/signup_success', function(req, res) {
+    res.render('signup_success')
+})
+
+app.get('/signup_fail', function(req, res) {
+    res.render('signup_fail')
 })
 
 app.listen(3000, function() {

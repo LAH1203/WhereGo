@@ -1,4 +1,4 @@
-.form_button{
+.form_button {
     width: 100%; 
     height: 50px; 
     background-color: rgb(58, 58, 58); 
@@ -7,4 +7,23 @@
     color: white; 
     font-size: 17px; 
     font-weight: 500;
+}
+
+.form_item_name {
+    color: gray;
+}
+
+.form_text_alert {
+    height: 20px;
+}
+
+.form_text_alert_padding {
+    padding-bottom: 10px;
+}
+
+.form_input {
+    height: 30px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: gray;
 }

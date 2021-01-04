@@ -7,4 +7,27 @@ html
             include style.css
         -// js 파일 넣는 코드 추가
     body
-        div signup_page
+        form(name='login_form' action='/process/login' method='get')
+            div
+                div
+                    a(class='form_item_name') ID
+                div
+                    input(type='id' name='id' placeholder='Enter ID' class='form_input')
+                div(class='form_text_alert_padding')
+                    div(id='alert_id' class='form_text_alert')
+            div
+                div
+                    a(class='form_item_name') Password
+                div
+                    input(type='password' name='password' placeholder='Enter password' class='form_input')
+                div(class='form_text_alert_padding')
+                    div(id='alert_password' class='form_text_alert')
+            div
+                div
+                    a(class='form_item_name') Name
+                div
+                    input(type='name' name='name' placeholder='Enter name' class='form_input')
+                div(class='form_text_alert_padding')
+                    div(id='alert_name' class='form_text_alert')
+            div
+                button(type='button' class='form_button' onclick='signup()') 회원가입
