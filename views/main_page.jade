@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title WhereGo
+        style
+            include style.css
+    body
+        -// 로고 이미지 넣고 싶은데 넣을 수가 없다...
+        div(style='height: 50px;')
+        div
+            button(type='button' class='form_button' onclick="location.href='/search'") 검색
+        div(style='height: 10px;')
+        div
+            button(type='button' class='form_button' onclick="location.href='/new'") 글쓰기
+        div(style='height: 10px;')
+        div
+            button(type='button' class='form_button' onclick="location.href='/course'") 관광코스
+        div(style='height: 10px;')
+        div
+            button(type='button' class='form_button' onclick="location.href='/login'") 로그인

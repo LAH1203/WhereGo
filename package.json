@@ -1,0 +1,27 @@
+{
+  "name": "wherego",
+  "version": "1.0.0",
+  "description": "WhereGo",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LAH1203/WhereGo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LAH1203/WhereGo/issues"
+  },
+  "homepage": "https://github.com/LAH1203/WhereGo#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "engine": "^1.0.0",
+    "express": "^4.17.1",
+    "jade": "^1.11.0",
+    "request": "^2.88.2",
+    "view": "^1.1.1"
+  }
+}
