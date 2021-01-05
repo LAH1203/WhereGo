@@ -6,8 +6,7 @@ html
         style
             include style.css
     body
-        -// 로고 이미지 넣고 싶은데 넣을 수가 없다...
-        div(style='height: 50px;')
+        img(src='/logo_transparent.png' class='form_logo')
         div
             button(type='button' class='form_button' onclick="location.href='/search'") 검색
         div(style='height: 10px;')
@@ -19,3 +18,6 @@ html
         div(style='height: 10px;')
         div
             button(type='button' class='form_button' onclick="location.href='/login'") 로그인
+        div(style='height: 10px;')
+        div
+            button(type='button' class='form_button' onclick="location.href='/profile'") 마이페이지

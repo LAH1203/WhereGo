@@ -5,8 +5,7 @@ html
         title Login
         style
             include style.css
-        -// js 파일이 삽입되지 않는다.. 방법을 찾아야 한다..
-        script(type='text/javascript' src='/login.js')
+        script(src='/login.js')
     body
         form(name='login_form' action='/process/login' method='get')
             div
