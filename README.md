@@ -49,6 +49,7 @@
   + search.js
     + 관광자원정보 api 추가
     + request를 require하는 부분에서 'Uncaught ReferenceError: require is not defined'하는 오류가 남 -> 내일 바로 고쳐보자
+- 2021-01-06~07 : 계속 오류가 난다.. 한 가지를 고치면 다른 곳에서 오류가 나는 기현상.. api를 쓰는걸 포기해야하는걸까..?
 
 (임시로 쓰는 다음에 해야할 부분)
 1. 검색 창 api와 연결하고 검색 UI 구축하기
