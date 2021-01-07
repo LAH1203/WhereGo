@@ -5,16 +5,14 @@ html
         title Search
         style
             include style.css
-        -// js 파일이 삽입되지 않는다.. 방법을 찾아야 한다..
         script(src='/search.js')
     body
         div search_page
         form(name='search_form' action='/process/search' method='get')
             div 시도
                 input(type='text' id='sido' placeholder='시도 (ex)서울특별시')
-            div 군구
+            div 시도
                 input(type='text' id='gungu' placeholder='군구 (ex)종로구')
-            div 지명
+            div 시도
                 input(type='text' id='res_nm' placeholder='관광지명 (ex)경복궁')
-                button(type='button' class='form_search_button' onclick='search()') 검색
-        
+                button(type='button' class='form_search_button' onclick='goSearchPage()') 검색
