@@ -30,7 +30,7 @@
 <사용 api>
 | api명 | 제공처 | Link |
 | ------ | ------ | ------ |
-| 관광자원정보 | 한국문화관광연구원 | https://data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=3035538 |
+| 관광자원정보(서비스 중지) | 한국문화관광연구원 | https://data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=3035538 |
 | 한국관광공사 관광사진 정보 | 한국관광공사 | https://data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15024675 |
 | 관광코스별 관광지 상세 날씨 조회서비스 | 기상청 | https://data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15056912 |
 
