@@ -1,6 +1,9 @@
 var express = require('express')
+var db_config = require(__dirname + '/public/mysql.js')
+var conn = db_config.init()
 var bodyParser = require('body-parser')
 var app = express()
+db_config.connect(conn)
 const { auth, requiresAuth } = require('express-openid-connect')
 const { requireAuth } = require('express-openid-connect')
 const config = {
@@ -29,7 +32,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/profile', requiresAuth(), (req, res) => {
-    res.send(JSON.stringify(req.oidc.user))
+    // res.send(JSON.stringify(req.oidc.user))
+    res.send(req.oidc.isAuthenticated() ? JSON.stringify(req.oidc.user) : '로그인 되어있지 않음')
 })
 
 // 메인
@@ -44,7 +48,21 @@ app.get('/search', function(req, res) {
 
 // 글쓰기
 app.get('/new', function(req, res) {
-    res.render('new_page')
+    // res.render('new_page')
+    res.render(req.oidc.isAuthenticated() ? 'new_page' : 'not_logined')
+})
+
+app.post('/newAfter', function(req, res) {
+    var body = req.body
+    console.log(body)
+
+    var sql = 'INSERT INTO BOARD VALUES(?, ?)'
+    var params = [body.place, body.content]
+    console.log(sql)
+    conn.query(sql, params, function(err) {
+        if(err) console.log('query is not excuted. insert fail...\n' + err)
+        else console.log('mysql 추가 성공!')
+    })
 })
 
 // 관광코스

@@ -2,9 +2,19 @@ doctype html
 html
     head
         meta(charset='utf-8')
-        title New
+        title 글쓰기
         style
             include style.css
-        -// js 파일 넣는 코드 추가
+        script(src='/new.js')
     body
-        div new_page
+        h2 글쓰기
+        hr
+        form(name='new_form' action='/newAfter' method='post')
+            div
+                input(type='text' name='place' placeholder='관광지명 또는 지역명')
+            div(style='height: 10px;')
+            div
+                textarea(rows='10' cols='100' name='content' placeholder='내용(최대 255자)')
+            div
+                input(type='submit' value='업로드')
+                input(type='reset' value='초기화')
