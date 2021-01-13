@@ -62,9 +62,9 @@
   + mysql.js
   + 참고 : https://gongbu-ing.tistory.com/32
   + 계속해서 Connection lost: The server closed the connection과 Cannot enqueue Query after fatal error가 발생한다. 구글에 검색하며 원인을 분석하고 여러 방법을 써보았지만 고쳐지지 않았기 때문에 이에 대해 조금 더 알아봐야 할 것 같다.
+- 글 작성 시 사용자와 연계되어 Mysql에 저장되도록 연동 완료 (2021-01-13)
 
 
 (임시로 쓰는 다음에 해야할 부분)
 1. 검색 창 api와 연결하고 검색 UI 구축하기(api 오류로 인해 보류)
-2. 글쓰기할 때 db에 사용자와 연계되어 저장되도록 만들기
-3. api 받아와서 코스 정보 사용자에게 알려주기
+2. api 받아와서 코스 정보 사용자에게 알려주기

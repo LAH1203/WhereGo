@@ -1,9 +1,15 @@
 var express = require('express')
-var db_config = require(__dirname + '/public/mysql.js')
-var conn = db_config.init()
+var mysql = require('mysql')
+var conn = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    // 실행 시마다 패스워드 변경하도록 하자..
+    password: 'secret',
+    database: 'reviews'
+})
+conn.connect()
 var bodyParser = require('body-parser')
 var app = express()
-db_config.connect(conn)
 const { auth, requiresAuth } = require('express-openid-connect')
 const { requireAuth } = require('express-openid-connect')
 const config = {
@@ -54,14 +60,15 @@ app.get('/new', function(req, res) {
 
 app.post('/newAfter', function(req, res) {
     var body = req.body
-    console.log(body)
-
-    var sql = 'INSERT INTO BOARD VALUES(?, ?)'
-    var params = [body.place, body.content]
-    console.log(sql)
+    
+    var sql = 'INSERT INTO review (place, content, user_email) VALUES(?, ?, ?)'
+    var params = [body.place, body.content, JSON.stringify(req.oidc.user.email)]
     conn.query(sql, params, function(err) {
-        if(err) console.log('query is not excuted. insert fail...\n' + err)
-        else console.log('mysql 추가 성공!')
+        if (err) {
+            console.log('query is not excuted. insert fail...\n' + err)
+        } else {
+            res.render('new_success')
+        }
     })
 })
 
