@@ -4,7 +4,7 @@ var conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     // 실행 시마다 패스워드 변경하도록 하자..
-    password: 'secret',
+    password: 'unist2020!',
     database: 'reviews'
 })
 conn.connect()
@@ -35,6 +35,10 @@ app.use(auth(config))
 app.get('/', (req, res) => {
     // res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out')
     res.render(req.oidc.isAuthenticated() ? 'login_success' : 'login_fail')
+})
+
+app.get('/logout', (req, res) => {
+    res.render(req.oidc.auth0Logout() ? 'logout_success' : 'logout_fail')
 })
 
 app.get('/profile', requiresAuth(), (req, res) => {
