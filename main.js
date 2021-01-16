@@ -4,7 +4,7 @@ var conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     // 실행 시마다 패스워드 변경하도록 하자..
-    password: 'unist2020!',
+    password: 'password',
     database: 'reviews'
 })
 conn.connect()
