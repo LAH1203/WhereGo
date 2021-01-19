@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title My Page
+        style
+            include style.css
+        script(src='/profile.js')
+    body
+        -var user_profile = JSON.stringify(user_profile_json)
+        -var email_before = JSON.stringify(user_profile_json.email)
+        -var email_after = email_before.toString().replace(/"/g, "")
+        -var name_before = JSON.stringify(user_profile_json.nickname)
+        -var name_after = name_before.toString().replace(/"/g, "")
+        -var picture_before = JSON.stringify(user_profile_json.picture)
+        -var picture_after = picture_before.toString().replace(/"/g, "")
+        img(src= picture_after)
+        div E-mail:
+            a= email_after
+        div Name:
+            a= name_after

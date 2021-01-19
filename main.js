@@ -43,7 +43,8 @@ app.get('/logout', (req, res) => {
 
 app.get('/profile', requiresAuth(), (req, res) => {
     // res.send(JSON.stringify(req.oidc.user))
-    res.send(req.oidc.isAuthenticated() ? JSON.stringify(req.oidc.user) : '로그인 되어있지 않음')
+    // res.send(req.oidc.isAuthenticated() ? JSON.stringify(req.oidc.user) : '로그인 되어있지 않음')
+    res.render(req.oidc.isAuthenticated() ? 'my_page' : 'not_logined', { user_profile_json: req.oidc.user })
 })
 
 // 메인
@@ -66,10 +67,11 @@ app.post('/newAfter', function(req, res) {
     var body = req.body
     
     var sql = 'INSERT INTO review (place, content, user_email) VALUES(?, ?, ?)'
-    var params = [body.place, body.content, JSON.stringify(req.oidc.user.email)]
+    var params = [body.place, body.content, JSON.stringify(req.oidc.user.email).toString().replace(/"/g, "")]
     conn.query(sql, params, function(err) {
         if (err) {
             console.log('query is not excuted. insert fail...\n' + err)
+            res.render('new_fail')
         } else {
             res.render('new_success')
         }
