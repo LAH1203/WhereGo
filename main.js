@@ -4,7 +4,7 @@ var conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     // 실행 시마다 패스워드 변경하도록 하자..
-    password: 'password',
+    password: 'unist2020!',
     database: 'reviews'
 })
 conn.connect()
@@ -55,6 +55,23 @@ app.get('/main', function(req, res) {
 // 검색
 app.get('/search', function(req, res) {
     res.render('search_page')
+})
+
+app.post('/searchAfter', function(req, res) {
+    var body = req.body
+    var sql = 'SELECT * FROM review WHERE PLACE=?'
+    var params = [body.place]
+    conn.query(sql, params, function(err, rows, fields) {
+        if (rows == 0) {
+            res.render('no_search_result')
+        }
+        else if (err) {
+            console.log('query is not excuted. select fail...\n' + err)
+            res.render('search_fail')
+        } else {
+            res.render('search_success', { result: rows })
+        }
+    })
 })
 
 // 글쓰기

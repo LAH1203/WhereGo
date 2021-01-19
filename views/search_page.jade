@@ -5,15 +5,10 @@ html
         title Search
         style
             include style.css
-        script(src='/search.js')
     body
         h2 검색
         hr
-        form(name='search_form' action='/process/search' method='get')
-            div 시도
-                input(type='text' id='sido' placeholder='시도 (ex)서울특별시')
-            div 군구
-                input(type='text' id='gungu' placeholder='군구 (ex)종로구')
-            div 지명
-                input(type='text' id='res_nm' placeholder='관광지명 (ex)경복궁')
-                button(type='button' class='form_search_button' onclick='goSearchPage()') 검색
+        form(action='/searchAfter' method='post')
+            div 장소명
+                input(type='text' name='place' placeholder='관광지명 (ex)경복궁')
+                input(type='submit' class='form_search_button' value='검색')
