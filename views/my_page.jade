@@ -7,6 +7,10 @@ html
             include style.css
         script(src='/profile.js')
     body
+        div
+            img(src='/logo_transparent.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+            h2 마이페이지
+        hr
         -var user_profile = JSON.stringify(user_profile_json)
         -var email_before = JSON.stringify(user_profile_json.email)
         -var email_after = email_before.toString().replace(/"/g, "")

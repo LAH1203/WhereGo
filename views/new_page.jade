@@ -6,7 +6,9 @@ html
         style
             include style.css
     body
-        h2 글쓰기
+        div
+            img(src='/logo_transparent.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+            h2 글쓰기
         hr
         form(action='/newAfter' method='post')
             div

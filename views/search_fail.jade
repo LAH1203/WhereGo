@@ -6,6 +6,12 @@ html
         style
             include style.css
     body
-        div 검색 실패!
         div
-            button(type='button' class='form_button' onclick="location.href='/search'") 검색 페이지로 돌아가기
+            img(src='/logo_transparent.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+            h2 후기 검색
+        hr
+        form(name='search_form' action='/searchAfter' method='post')
+            div 장소명
+                input(type='text' name='place' placeholder='관광지명 (ex)경복궁')
+                input(type='submit' class='form_search_button' value='검색')
+        div 검색 실패!

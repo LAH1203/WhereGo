@@ -6,9 +6,11 @@ html
         style
             include style.css
     body
-        h2 검색
+        div
+            img(src='/logo_transparent.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+            h2 후기 검색
         hr
-        form(action='/searchAfter' method='post')
+        form(name='search_form' action='/searchAfter' method='post')
             div 장소명
                 input(type='text' name='place' placeholder='관광지명 (ex)경복궁')
                 input(type='submit' class='form_search_button' value='검색')

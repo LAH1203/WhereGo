@@ -4,7 +4,7 @@ var conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     // 실행 시마다 패스워드 변경하도록 하자..
-    password: 'password',
+    password: 'unist2020!',
     database: 'reviews'
 })
 conn.connect()
@@ -57,11 +57,11 @@ app.get('/search', function(req, res) {
     res.render('search_page')
 })
 
-app.post('/searchAfter', function(req, res) {
+app.get('/searchAfter', function(req, res) {
     var body = req.body
     var sql = 'SELECT * FROM review WHERE PLACE=?'
     var params = [body.place]
-    conn.query(sql, params, function(err, rows, fields) {
+    conn.query(sql, params, function(err, rows) {
         if (rows == 0) {
             res.render('no_search_result')
         }
@@ -99,7 +99,6 @@ app.post('/newAfter', function(req, res) {
 app.get('/course', function(req, res) {
     res.render('course_page')
 })
-
 
 // 로그인
 app.get('/login', function(req, res) {

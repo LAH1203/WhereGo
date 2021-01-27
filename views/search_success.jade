@@ -6,10 +6,17 @@ html
         style
             include style.css
     body
-        div 검색 성공!
+        div
+            img(src='/logo_transparent.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+            h2 후기 검색
+        hr
+        form(name='search_form' action='/searchAfter' method='post')
+            div 장소명
+                input(type='text' name='place' placeholder='관광지명 (ex)경복궁')
+                input(type='submit' class='form_search_button' value='검색')
+        -//div 검색 성공!
         -for(var i = 0; i < result.length; i++)
             div= result[i].PLACE
             div= result[i].CONTENT
             div= result[i].user_email
-        div
-            button(type='button' class='form_button' onclick="location.href='/main'") 메인으로 돌아가기
+            br
