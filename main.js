@@ -1,5 +1,6 @@
 var express = require('express')
 var mysql = require('mysql')
+var location = require('location')
 var conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -97,7 +98,18 @@ app.post('/newAfter', function(req, res) {
 
 // 관광코스
 app.get('/course', function(req, res) {
-    res.render('course_page')
+    var course_id = req.query.course_id
+    var link = null
+    if (course_id != null) {
+        var url = 'http://apis.data.go.kr/1360000/TourStnInfoService/getTourStnVilageFcst'
+        var queryParams = '?serviceKey=M%2BsXx7%2BQWCiCOcTgFAo0V4vPG%2Fi3dmWlPDWY0tEmEQB44%2Fdt%2FHgAsCR%2FcewDOVDRTTPG0IM7rujX0YdJ%2BzV9Xw%3D%3D&numOfRows=10&pageNo=1&CURRENT_DATE=2019122010&HOUR=24'
+        queryParams += '&COURSE_ID=' + course_id
+        link = url + queryParams
+        // res.writeHead(302, {'Location': link})
+        // res.end()
+        location.href = link    // 오류
+    }
+    res.render('course_page', { link: link })
 })
 
 // 로그인

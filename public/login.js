@@ -25,10 +25,8 @@ function login() {
     // 아이디와 패스워드가 모두 정확히 입력되었을 때
     if (user_id && user_password) {
         console.log('로그인 성공');
-        var link = '/login_success';
-        window.location.href = link;
-        window.location.replace(link);  // 이전 페이지로 못 돌아감
-        window.open(link);
+        var link = 'http://localhost:3000/login_success';
+        location.href = link;
     }
 }
 

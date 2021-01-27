@@ -19,6 +19,7 @@ html
         -var picture_before = JSON.stringify(user_profile_json.picture)
         -var picture_after = picture_before.toString().replace(/"/g, "")
         img(src= picture_after)
+        -//a= user_profile
         div E-mail:
             a= email_after
         div Name:
