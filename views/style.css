@@ -1,7 +1,5 @@
 .form_logo {
-    height: 500px;
-    margin-left: 225px;
-    text-align: center;
+    width: 40%;
 }
 
 .form_mini_logo {
@@ -10,25 +8,70 @@
 }
 
 .form_button {
-    width: 100%; 
+    width: 50%; 
     height: 50px; 
-    background-color: rgb(58, 58, 58); 
-    border: 1px; 
-    border-radius: 3px; 
+    background-color: #1a5d94; 
+    border: 1px;
+    border-radius: 3px;
     color: white; 
-    font-size: 17px; 
-    font-weight: 500;
+    font-size: 19px;
 }
 
 .form_search_button {
-    background-color: rgb(58, 58, 58);
+    width: 6%;
+    height: 35px;
+    background-color: #1a5d94;
+    border: 1px;
+    border-radius: 3px;
+    color: white;
+    font-size: 18px; 
+    font-weight: 500;
+}
+
+.form_upload_button {
+    height: 30px;
+    background-color: #1a5d94;
+    border: 1px;
+    border-radius: 3px;
     color: white;
     font-size: 17px; 
     font-weight: 500;
 }
 
+.form_login_button {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 420px;
+    text-align: center;
+}
+
+.form_logout_button {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .form_item_name {
-    color: gray;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.form_search_place_name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form_search_place_content {
+    font-size: 17px;
+    color: rgb(73, 70, 70);
+}
+
+.form_search_place_email {
+    font-size: 17px;
+    color: #2F4F4F;
 }
 
 .form_text_alert {
@@ -40,7 +83,24 @@
 }
 
 .form_input {
+    width: 50%;
     height: 30px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: gray;
+}
+
+.form_search_place_name_input {
+    width: 70%;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: gray;
+}
+
+.form_search_place_content_input {
+    width: 70%;
+    height: 150px;
     border: 1px solid;
     border-radius: 3px;
     border-color: gray;

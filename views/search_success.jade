@@ -6,17 +6,18 @@ html
         style
             include style.css
     body
-        div
-            img(src='/logo_transparent.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+        center
+            img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
             h2 후기 검색
-        hr
-        form(name='search_form' action='/searchAfter' method='post')
-            div 장소명
-                input(type='text' name='place' placeholder='관광지명 (ex)경복궁')
-                input(type='submit' class='form_search_button' value='검색')
-        -//div 검색 성공!
-        -for(var i = 0; i < result.length; i++)
-            div= result[i].PLACE
-            div= result[i].CONTENT
-            div= result[i].user_email
-            br
+            hr
+            form(name='search_form' action='/searchAfter' method='post')
+                div(class='form_item_name') 장소명
+                    input(type='text' name='place' class='form_input' placeholder='관광지명 (ex)경복궁')
+                    input(type='submit' class='form_search_button' value='검색' style='cursor:pointer;')
+            -//div 검색 성공!
+            div(style='height: 10px;')
+            -for(var i = 0; i < result.length; i++)
+                div(class='form_search_place_name')= result[i].PLACE
+                div(class='form_search_place_content')= result[i].CONTENT
+                div(class='form_search_place_email')= result[i].user_email
+                br

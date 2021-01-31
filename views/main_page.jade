@@ -6,21 +6,21 @@ html
         style
             include style.css
     body
-        img(src='/logo_transparent.png' class='form_logo' style='cursor:pointer;' onclick="location.href='/main'")
-        div
-            button(type='button' class='form_button' onclick="location.href='/search'") 후기 검색
-        div(style='height: 10px;')
-        div
-            button(type='button' class='form_button' onclick="location.href='/new'") 글쓰기
-        div(style='height: 10px;')
-        div
-            button(type='button' class='form_button' onclick="location.href='/course'") 관광코스
-        div(style='height: 10px;')
-        div
-            button(type='button' class='form_button' onclick="location.href='/login'") 로그인
-        div(style='height: 10px;')
-        div
-            button(type='button' class='form_button' onclick="location.href='/logout'") 로그아웃
-        div(style='height: 10px;')
-        div
-            button(type='button' class='form_button' onclick="location.href='/profile'") 마이페이지
+        div(style='height: 50px')
+        center
+            img(src='/logo_transparent_cut.png' class='form_logo' style='cursor:pointer;' onclick="location.href='/main'")
+        div(style='height: 10px')
+        div(class='form_login_button' style='cursor:pointer;' onclick="location.href='/login'") 로그인
+        div(style='height: 30px')
+        center
+            div
+                button(type='button' style='cursor:pointer;' class='form_button' onclick="location.href='/search'") 후기 검색
+            div(style='height: 10px;')
+            div
+                button(type='button' style='cursor:pointer;' class='form_button' onclick="location.href='/new'") 글쓰기
+            div(style='height: 10px;')
+            div
+                button(type='button' style='cursor:pointer;' class='form_button' onclick="location.href='/course'") 여행 코스
+            div(style='height: 10px;')
+            div
+                button(type='button' style='cursor:pointer;' class='form_button' onclick="location.href='/profile'") 마이페이지

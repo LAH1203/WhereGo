@@ -6,16 +6,17 @@ html
         style
             include style.css
     body
-        div
-            img(src='/logo_transparent.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+        center
+            img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
             h2 글쓰기
-        hr
-        form(action='/newAfter' method='post')
-            div
-                input(type='text' name='place' placeholder='관광지명 또는 지역명')
-            div(style='height: 10px;')
-            div
-                textarea(rows='10' cols='100' name='content' placeholder='내용(최대 255자)')
-            div
-                input(type='submit' value='업로드')
-                input(type='reset' value='초기화')
+            hr
+            form(action='/newAfter' method='post')
+                div
+                    input(type='text' name='place' class='form_search_place_name_input' placeholder='관광지명 또는 지역명')
+                div(style='height: 10px;')
+                div
+                    textarea(rows='5' cols='51' name='content' class='form_search_place_content_input' placeholder='내용(최대 255자)')
+                div(style='height: 10px;')
+                div
+                    input(type='submit' value='업로드' class='form_upload_button' style='cursor:pointer;')
+                    input(type='reset' value='초기화' class='form_upload_button' style='cursor:pointer;')
