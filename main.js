@@ -37,14 +37,30 @@ app.get('/', (req, res) => {
     res.render(req.oidc.isAuthenticated() ? 'login_success' : 'login_fail');
 });
 
+// 로그아웃 <= 오류 ver
 app.get('/logout', (req, res) => {
     res.render(req.oidc.auth0Logout() ? 'logout_success' : 'logout_fail');
 });
 
+// 마이페이지
 app.get('/profile', requiresAuth(), (req, res) => {
     // res.send(JSON.stringify(req.oidc.user));
     // res.send(req.oidc.isAuthenticated() ? JSON.stringify(req.oidc.user) : '로그인 되어있지 않음');
     res.render(req.oidc.isAuthenticated() ? 'my_page' : 'not_logined', { user_profile_json: req.oidc.user });
+});
+
+// 내 후기 보기
+app.get('/myReviews', function(req, res) {
+    var sql = 'SELECT * FROM review WHERE user_email=?';
+    var params = [req.oidc.user.email];
+    conn.query(sql, params, function(err, rows) {
+        if (err) {
+            console.log('query is not excuted. select fail...\n' + err);
+            res.render('my_reviews_fail');
+       } else {
+            res.render('my_reviews_page', { result: rows });
+        }
+    });
 });
 
 // 메인
