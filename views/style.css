@@ -18,7 +18,7 @@
 }
 
 .form_search_button {
-    width: 6%;
+    width: 5%;
     height: 35px;
     background-color: #1a5d94;
     border: 1px;
@@ -52,6 +52,17 @@
     font-size: 18px;
     font-weight: bold;
     text-decoration: underline;
+}
+
+.form_update_reviews_button {
+    width: 5%;
+    height: 30px;
+    background-color: #1a5d94;
+    border: 1px;
+    border-radius: 3px;
+    color: white;
+    font-size: 15px; 
+    font-weight: 500;
 }
 
 .form_item_name {

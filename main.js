@@ -23,7 +23,8 @@ const config = {
 
 app.locals.pretty = true;
 app.set('views', './views');
-app.set('view engine', 'jade');
+// app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 // 정적인 파일이 위치할 디렉토리 지정
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -70,7 +71,11 @@ app.get('/main', function(req, res) {
 
 // 검색
 app.get('/search', function(req, res) {
-    res.render('search_page');
+    // res.render('search_page', { result: null });
+    var sql = 'SELECT * FROM review';
+    conn.query(sql, function(err, rows) {
+        res.render('search_page', { result: null, all: rows, my_email: req.oidc.user.email });
+    });
 });
 
 app.post('/searchAfter', function(req, res) {
@@ -85,7 +90,7 @@ app.post('/searchAfter', function(req, res) {
             console.log('query is not excuted. select fail...\n' + err);
             res.render('search_fail');
         } else {
-            res.render('search_success', { result: rows });
+            res.render('search_page', { result: rows, my_email: req.oidc.user.email });
         }
     });
 });
@@ -107,6 +112,51 @@ app.post('/newAfter', function(req, res) {
             res.render('new_fail');
         } else {
             res.render('new_success');
+        }
+    });
+});
+
+// 글 수정
+app.get('/updateReview', function(req, res) {
+    var num = req.query.num;
+    var sql = 'SELECT * FROM review WHERE num=?';
+    var params = [num];
+    conn.query(sql, params, function(err, rows) {
+        if (err) {
+            console.log('query is not excuted. insert fail...\n' + err);
+            res.render('update_review_fail');
+        } else {
+            res.render('update_review_page', { result: rows });
+        }
+    });
+});
+
+app.post('/updateReviewAfter', function(req, res) {
+    var body = req.body;
+    
+    var sql = 'UPDATE review SET place=?,content=? WHERE num=?';
+    var params = [body.place, body.content, body.num];
+    conn.query(sql, params, function(err) {
+        if (err) {
+            console.log('query is not excuted. insert fail...\n' + err);
+            res.render('update_review_fail');
+        } else {
+            res.render('update_review_success');
+        }
+    });
+});
+
+// 글 삭제
+app.get('/deleteReview', function(req, res) {
+    var num = req.query.num;
+    var sql = 'DELETE FROM review WHERE num=?';
+    var params = [num];
+    conn.query(sql, params, function(err, rows) {
+        if (err) {
+            console.log('query is not excuted. insert fail...\n' + err);
+            res.render('delete_review_fail');
+        } else {
+            res.render('delete_review_success');
         }
     });
 });

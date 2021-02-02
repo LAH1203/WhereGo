@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 글 수정
+        style
+            include style.css
+    body
+        center
+            img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+            h2 글 수정
+            hr
+            form(action='/updateReviewAfter' method='post')
+                div
+                    input(type='number' name='num' class='form_search_place_name_input' value=result[0].num readonly)
+                div
+                    input(type='text' name='place' class='form_search_place_name_input' value=result[0].PLACE placeholder='관광지명 또는 지역명')
+                div(style='height: 10px;')
+                div
+                    textarea(rows='5' cols='51' name='content' class='form_search_place_content_input' value=result[0].CONTENT placeholder='내용(최대 255자)')
+                div(style='height: 10px;')
+                div
+                    input(type='submit' value='수정' class='form_upload_button' style='cursor:pointer;')
+                    input(type='reset' value='초기화' class='form_upload_button' style='cursor:pointer;')
