@@ -11,19 +11,21 @@ html
             img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
             h2 마이페이지
             hr
-            -var user_profile = JSON.stringify(user_profile_json)
-            -var email_before = JSON.stringify(user_profile_json.email)
-            -var email_after = email_before.toString().replace(/"/g, "")
-            -var name_before = JSON.stringify(user_profile_json.nickname)
-            -var name_after = name_before.toString().replace(/"/g, "")
-            -var picture_before = JSON.stringify(user_profile_json.picture)
-            -var picture_after = picture_before.toString().replace(/"/g, "")
-            img(src= picture_after)
+            -//var user_profile = JSON.stringify(user_profile_json)
+            -//var email_before = JSON.stringify(user_profile_json.email)
+            -//var email_after = email_before.toString().replace(/"/g, "")
+            -//var name_before = JSON.stringify(user_profile_json.nickname)
+            -//var name_after = name_before.toString().replace(/"/g, "")
+            -//var picture_before = JSON.stringify(user_profile_json.picture)
+            -//var picture_after = picture_before.toString().replace(/"/g, "")
+            -//img(src= picture_after)
             -//a= user_profile
             div E-mail:
-                a= email_after
+                a= me.Email
             div Name:
-                a= name_after
+                a= me.Name
+            a(class='form_logout_button' style='cursor:pointer;' onclick="location.href='/beforeUpdateInfo'") 내 정보 수정
+            br
             a(class='form_logout_button' style='cursor:pointer;' onclick="location.href='/myReviews'") 내 후기 보기
             a  
             a(class='form_logout_button' style='cursor:pointer;' onclick="location.href='/logout'") 로그아웃

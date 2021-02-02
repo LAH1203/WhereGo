@@ -1,16 +1,17 @@
+// 만들긴 했지만 사용은 안했다.. 아까워서 지우질 못하겠다...
 function login() {
     const form = document.login_form;
-    const user_id = checkValidID(form);
+    const user_email = checkValidEmail(form);
     const user_password = checkValidPassword(form);
 
-    if (user_id) {
-        document.getElementById('alert_id').innerText = " ";
+    if (user_email) {
+        document.getElementById('alert_email').innerText = " ";
         form.id.style.border = '2px solid';
         form.id.style.borderColor = '#00D000';
     } else {
         form.id.style.border = '2px solid';
         form.id.style.borderColor = '#FF0000';
-        document.getElementById('alert_id').style.color = '#FF0000';
+        document.getElementById('alert_email').style.color = '#FF0000';
     }
     if (user_password) {
         document.getElementById('alert_password').innerText = " ";
@@ -23,7 +24,7 @@ function login() {
     }
 
     // 아이디와 패스워드가 모두 정확히 입력되었을 때
-    if (user_id && user_password) {
+    if (user_email && user_password) {
         console.log('로그인 성공');
         var link = 'http://localhost:3000/login_success';
         location.href = link;

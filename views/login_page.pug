@@ -7,7 +7,7 @@ html
             include style.css
         script(src='/login.js')
     body
-        form(name='login_form' action='/process/login' method='get')
+        form(name='login_form' action='/login' method='post')
             center
                 img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
                 h2 로그인
@@ -15,11 +15,11 @@ html
                 div(style='height: 10px;')
                 div
                     div
-                        a(class='form_item_name') ID
+                        a(class='form_item_name') E-mail
                     div
-                        input(type='id' name='id' placeholder='Enter ID' class='form_input')
+                        input(type='email' name='email' placeholder='Enter E-mail' class='form_input')
                     div(class='form_text_alert_padding')
-                        div(id='alert_id' class='form_text_alert')
+                        div(id='alert_email' class='form_text_alert')
                 div
                     div
                         a(class='form_item_name') Password
@@ -28,6 +28,7 @@ html
                     div(class='form_text_alert_padding')
                         div(id='alert_password' class='form_text_alert')
                 div
-                    button(type='button' class='form_button' onclick='login()') 로그인
+                    -//button(type='button' class='form_button' onclick='login()') 로그인
+                    button(type='submit' class='form_button') 로그인
                 div
                     button(type='button' class='form_button' onclick="location.href='/signup'") 회원가입

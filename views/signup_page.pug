@@ -7,7 +7,7 @@ html
             include style.css
         script(src='/signup.js')
     body
-        form(name='login_form' action='/process/login' method='get')
+        form(name='signup_form' action='/signup' method='post')
             center
                 img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
                 h2 회원가입
@@ -15,11 +15,11 @@ html
                 div(style='height: 10px;')
                 div
                     div
-                        a(class='form_item_name') ID
+                        a(class='form_item_name') E-mail
                     div
-                        input(type='id' name='id' placeholder='Enter ID' class='form_input')
+                        input(type='email' name='email' placeholder='Enter E-mail' class='form_input')
                     div(class='form_text_alert_padding')
-                        div(id='alert_id' class='form_text_alert')
+                        div(id='alert_email' class='form_text_alert')
                 div
                     div
                         a(class='form_item_name') Password
@@ -29,10 +29,17 @@ html
                         div(id='alert_password' class='form_text_alert')
                 div
                     div
+                        a(class='form_item_name') Confirm Password
+                    div
+                        input(type='password' name='password2' placeholder='Confirm password' class='form_input')
+                    div(class='form_text_alert_padding')
+                        div(id='alert_confirmpassword' class='form_text_alert')
+                div
+                    div
                         a(class='form_item_name') Name
                     div
-                        input(type='name' name='name' placeholder='Enter name' class='form_input')
+                        input(type='text' name='name' placeholder='Enter name' class='form_input')
                     div(class='form_text_alert_padding')
                         div(id='alert_name' class='form_text_alert')
                 div
-                    button(type='button' class='form_button' onclick='signup()') 회원가입
+                    button(type='submit' class='form_button') 회원가입
