@@ -8,26 +8,31 @@ html
         script(src='/signup.js')
     body
         form(name='login_form' action='/process/login' method='get')
-            div
+            center
+                img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+                h2 회원가입
+                hr
+                div(style='height: 10px;')
                 div
-                    a(class='form_item_name') ID
+                    div
+                        a(class='form_item_name') ID
+                    div
+                        input(type='id' name='id' placeholder='Enter ID' class='form_input')
+                    div(class='form_text_alert_padding')
+                        div(id='alert_id' class='form_text_alert')
                 div
-                    input(type='id' name='id' placeholder='Enter ID' class='form_input')
-                div(class='form_text_alert_padding')
-                    div(id='alert_id' class='form_text_alert')
-            div
+                    div
+                        a(class='form_item_name') Password
+                    div
+                        input(type='password' name='password' placeholder='Enter password' class='form_input')
+                    div(class='form_text_alert_padding')
+                        div(id='alert_password' class='form_text_alert')
                 div
-                    a(class='form_item_name') Password
+                    div
+                        a(class='form_item_name') Name
+                    div
+                        input(type='name' name='name' placeholder='Enter name' class='form_input')
+                    div(class='form_text_alert_padding')
+                        div(id='alert_name' class='form_text_alert')
                 div
-                    input(type='password' name='password' placeholder='Enter password' class='form_input')
-                div(class='form_text_alert_padding')
-                    div(id='alert_password' class='form_text_alert')
-            div
-                div
-                    a(class='form_item_name') Name
-                div
-                    input(type='name' name='name' placeholder='Enter name' class='form_input')
-                div(class='form_text_alert_padding')
-                    div(id='alert_name' class='form_text_alert')
-            div
-                button(type='button' class='form_button' onclick='signup()') 회원가입
+                    button(type='button' class='form_button' onclick='signup()') 회원가입

@@ -6,6 +6,10 @@ html
         style
             include style.css
     body
-        div 로그인 성공!
-        div
-            button(type='button' class='form_button' onclick="location.href='/main'") 메인으로 돌아가기
+        center
+            img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
+            h2 로그인 성공
+            hr
+            div(style='height: 10px;')
+            div
+                button(type='button' class='form_button' onclick="location.href='/main'") 메인으로 돌아가기
