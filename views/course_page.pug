@@ -11,8 +11,13 @@ html
             img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
             h2 여행 코스
             hr
-            form(name='course_search_form')
-                input(type='text' name='course_id' class='form_input' placeholder='코스 번호(1 ~ 438)')
+            -//if (link !== null) goCourse(link);
+            form(name='course_search_form' onsubmit='return false')
+                input(type='date' id='searchDate' name='searchDate')
+                div(style='height: 10px;')
+                input(type='text' name='course_id' class='form_input' placeholder='코스 번호(1 ~ 438)' onKeyPress='if(event.keyCode==13){course();}')
+                -// document.getElementById(button_name).onclick=course(); <- 나중에 자바스크립트로 onclick 분리할 때 이런식으로 하면 될 듯
                 button(type='button' class='form_search_button' onclick='course()') 검색
+        script document.getElementById('searchDate').value = new Date().toISOString().substring(0, 10);
 
         

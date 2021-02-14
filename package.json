@@ -28,6 +28,7 @@
     "express-session": "^1.17.1",
     "jade": "^1.11.0",
     "location": "0.0.1",
+    "location-href": "^1.0.0",
     "mysql": "^2.18.1",
     "pug": "^3.0.0",
     "request": "^2.88.2",
