@@ -5,6 +5,7 @@ html
         title Search
         style
             include style.css
+        script(src='/my_reviews.js')
     body
         center
             img(src='/logo_transparent_cut.png' class='form_mini_logo' style='cursor:pointer;' onclick="location.href='/main'")
@@ -17,24 +18,24 @@ html
             -if (result != null)
                 div(style='height: 10px;')
                 -for(var i = 0; i < result.length; i++)
-                    div(class='form_search_place_name')= result[i].PLACE
-                    div(class='form_search_place_content')= result[i].CONTENT
-                    div(class='form_search_place_email')= result[i].user_email
-                    -if(result[i].user_email == my_email)
-                        button(type='button' class='form_update_reviews_button' style='cursor:pointer;' value=`${result[i].num}` onclick='update_review(value)') 수정
-                        a  
-                        button(type='button' class='form_update_reviews_button' style='cursor:pointer;' value=`${result[i].num}` onclick='delete_review(value)') 삭제
-                    br
+                    div(class='box')
+                        div(class='form_search_place_name')= result[i].PLACE
+                        div(class='form_search_place_content')= result[i].CONTENT
+                        div(class='form_search_place_email')= result[i].user_email
+                        -if(result[i].user_email == my_email)
+                            button(type='button' class='form_update_reviews_button' style='cursor:pointer;' value=`${result[i].num}` onclick='update_review(value)') 수정
+                            a  
+                            button(type='button' class='form_update_reviews_button' style='cursor:pointer;' value=`${result[i].num}` onclick='delete_review(value)') 삭제
                     br
             -else
                 div(style='height: 10px;')
                 -for(var i = 0; i < all.length; i++)
-                    div(class='form_search_place_name')= all[i].PLACE
-                    div(class='form_search_place_content')= all[i].CONTENT
-                    div(class='form_search_place_email')= all[i].user_email
-                    -if(all[i].user_email == my_email)
-                        button(type='button' class='form_update_reviews_button' style='cursor:pointer;' value=`${all[i].num}` onclick='update_review(value)') 수정
-                        a  
-                        button(type='button' class='form_update_reviews_button' style='cursor:pointer;' value=`${all[i].num}` onclick='delete_review(value)') 삭제
-                    br
+                    div(class='box')
+                        div(class='form_search_place_name')= all[i].PLACE
+                        div(class='form_search_place_content')= all[i].CONTENT
+                        div(class='form_search_place_email')= all[i].user_email
+                        -if(all[i].user_email == my_email)
+                            button(type='button' class='form_update_reviews_button' style='cursor:pointer;' value=`${all[i].num}` onclick='update_review(value)') 수정
+                            a  
+                            button(type='button' class='form_update_reviews_button' style='cursor:pointer;' value=`${all[i].num}` onclick='delete_review(value)') 삭제
                     br

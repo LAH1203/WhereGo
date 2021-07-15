@@ -10,17 +10,20 @@ html
         center
             img(src='/logo_transparent_cut.png' class='form_logo' style='cursor:pointer;' onclick="location.href='/main'")
         div(style='height: 10px')
-        div(class='form_login_button' style='cursor:pointer;' onclick="location.href='/login'") 로그인
+        if (!logined)
+            div(class='form_login_button' style='cursor:pointer;' onclick="location.href='/login'") 로그인
+        else 
+            center
+                button(type='button' onclick="location.href='/profile'" style='border: 0px none; background-color: transparent; margin-left: 45%;')
+                    svg(xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16")
+                        path(d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z")
+                        path(fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z")
+            br
         div(style='height: 30px')
         center
             div
-                button(type='button' style='cursor:pointer;' class='form_button' onclick="location.href='/search'") 후기 검색
-            div(style='height: 10px;')
+                button(type='button' style='cursor:pointer; margin-bottom: 10px;' class='form_button' onclick="location.href='/search'") 후기 검색
             div
-                button(type='button' style='cursor:pointer;' class='form_button' onclick="location.href='/new'") 글쓰기
-            div(style='height: 10px;')
+                button(type='button' style='cursor:pointer; margin-bottom: 10px;' class='form_button' onclick="location.href='/new'") 후기 작성
             div
                 button(type='button' style='cursor:pointer;' class='form_button' onclick="location.href='/course'") 여행 코스
-            div(style='height: 10px;')
-            div
-                button(type='button' style='cursor:pointer;' class='form_button' onclick="location.href='/profile'") 마이페이지

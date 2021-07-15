@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+* {
+    font-family: 'Do Hyeon', sans-serif;
+}
+
 .form_logo {
-    width: 40%;
+    width: 30%;
 }
 
 .form_mini_logo {
@@ -45,13 +51,6 @@
     text-decoration: underline;
     margin-left: 45%;
     text-align: center;
-}
-
-.form_logout_button {
-    color: red;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: underline;
 }
 
 .form_update_reviews_button {
@@ -115,4 +114,9 @@
     border: 1px solid;
     border-radius: 3px;
     border-color: gray;
+}
+
+.box {
+    border: 1px solid;
+    padding: 10px;
 }
